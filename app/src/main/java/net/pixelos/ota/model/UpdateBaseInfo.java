@@ -42,4 +42,6 @@ public interface UpdateBaseInfo {
     ArrayList<MaintainerInfo> getMaintainers();
 
     String getHash();
+
+    int getMinTimestamp ();
 }

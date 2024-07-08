@@ -32,6 +32,8 @@ public class UpdateBase implements UpdateBaseInfo {
     private String mNewsUrl;
     private ArrayList<MaintainerInfo> mMaintainers;
     private String mHash;
+    private int mMinTimestamp;
+
 
     UpdateBase() {
     }
@@ -151,5 +153,14 @@ public class UpdateBase implements UpdateBaseInfo {
 
     public void setHash(String hash) {
         mHash = hash;
+    }
+
+    @Override
+    public int getMinTimestamp () {
+        return mMinTimestamp;
+    }
+
+    public void setMinTimestamp (int Timestamp) {
+        mMinTimestamp = Timestamp;
     }
 }

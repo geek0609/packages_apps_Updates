@@ -118,6 +118,11 @@ public class Utils {
             Log.d(TAG, update.getName() + " with timestamp " + update.getTimestamp() + " is older than/equal to the current build " + SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0));
             return false;
         }
+        if (update.getMinTimestamp() > SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0)) {
+            Log.d(TAG, "The minimum timestamp " + update.getMinTimestamp() + " is newer than the current build " + SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0) + " A CLEAN FLASH MAY BE REQUIRED ");
+            return false;
+        }
+
         return true;
     }
 
